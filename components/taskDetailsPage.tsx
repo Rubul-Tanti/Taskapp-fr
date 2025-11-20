@@ -179,7 +179,7 @@ toast((t) => (
                 <div className='flex-1'>
                   <p className='text-sm text-gray-500 mb-1'>Created At</p>
                   <p className='text-gray-700'>
-                    {data.created_at ? formatDate(data.created_at) : 'N/A'}
+                    {data.createdAt ? formatDate(data.createdAt) : 'N/A'}
                   </p>
                 </div>
                 
