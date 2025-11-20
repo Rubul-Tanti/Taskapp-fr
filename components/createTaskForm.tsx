@@ -15,6 +15,8 @@ type TaskFormData = {
 
 const CreateTaskForm = () => {
   const {isCreateFormOpen: isOpenForm, setIsCreateFormOpen: setIsOpenForm}=useContextProvider()
+  const [loading,setLoading]=useState(false)
+
   const [formData, setFormData] = useState<TaskFormData>({
     title: "",
     description: "",
@@ -28,7 +30,7 @@ const queryClient=useQueryClient()
 
   const handleCreateTask = async(e: React.FormEvent) => {
       e.preventDefault();
-    try{
+    try{setLoading(true)
         const res=await createTask(formData)
        queryClient.invalidateQueries({queryKey:["tasks"]})
        toast.success('Task created successfully!');
@@ -36,6 +38,7 @@ const queryClient=useQueryClient()
     }catch(err){
         console.error('Error creating task:', err);
     }
+    finally{setLoading(false)}
   };
 
   return (
@@ -79,10 +82,10 @@ const queryClient=useQueryClient()
               />
 
               <button
+              disabled={loading}
                 type="submit"
                 className="bg-black text-white rounded-lg p-2 mt-5 mx-5"
-              >
-                Create Task
+              >{loading?'Creating...':'Create Task'}
               </button>
             </div>
           </form>
