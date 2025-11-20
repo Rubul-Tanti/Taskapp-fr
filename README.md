@@ -76,14 +76,7 @@ Notifications will appear for actions like success or errors.
 
 Data fetching is optimized with TanStack Query for smooth performance.
 
-Folder Structure
-├── components/      # Reusable React components
-├── pages/           # Next.js pages
-├── context/         # Context API for global state
-├── hooks/           # Custom React hooks
-├── styles/          # Tailwind CSS and global styles
-├── utils/           # Helper functions
-└── public/          # Static assets
+
 
 Author
 
