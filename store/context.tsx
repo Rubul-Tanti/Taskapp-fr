@@ -30,7 +30,7 @@ export const AppContext = createContext<AppContextType>({
   title:'',
   description:'',
   status:'todo',
-  created_at:''},
+  createdAt:''},
   setCurrentTask:()=>{}
 });
 
@@ -43,7 +43,7 @@ const ContextProvider=({children}:{children:React.ReactNode})=>{
   title:'',
   description:'',
   status:'todo',
-  created_at:''})
+  createdAt:''})
 
     return <AppContext.Provider value={{currentTask,setCurrentTask,error,setError,isCreateFormOpen,setIsCreateFormOpen,isCardOpen,setIsCardOpen,taskList,setTaskList}}>{children}</AppContext.Provider>
 
